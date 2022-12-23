@@ -4,11 +4,51 @@ import styled from 'styled-components/macro';
 const Hero = () => {
   return (
     <Wrapper>
-      <HeroImage src="/images/hero-img.jpg" />
+      <picture>
+        <source
+          type="image/avif"
+          srcSet="
+            /images/hero-img.avif 1x,
+            /images/hero-img@2x.avif 2x,
+            /images/hero-img@3x.avif 3x
+          "
+        />
+        <HeroImage 
+          src="/images/hero-img.jpg"
+          srcSet="
+            /images/hero-img.jpg 1x,
+            /images/hero-img@2x.jpg 2x,
+            /images/hero-img@3x.jpg 3x
+          "
+        />
+      </picture>
       <Swoop src="/swoop.svg" />
     </Wrapper>
   );
 };
+
+<picture>
+  <source
+    type="image/avif"
+    srcset="
+      /cfj-mats/responsive-diamond.avif 1x,
+      /cfj-mats/responsive-diamond@2x.avif 2x,
+      /cfj-mats/responsive-diamond@3x.avif 3x
+    "
+  />
+  <source
+    type="image/webp"
+    srcset="
+      /cfj-mats/responsive-diamond.webp 1x,
+      /cfj-mats/responsive-diamond@2x.webp 2x,
+      /cfj-mats/responsive-diamond@3x.webp 3x
+    "
+  />
+  <img
+    alt=""
+    src="/cfj-mats/responsive-diamond.png"
+  />
+</picture>
 
 const Wrapper = styled.section`
   position: relative;
